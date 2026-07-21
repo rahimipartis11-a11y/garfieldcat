@@ -1,0 +1,130 @@
+<?php theme::get_header('login'); ?>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071522">
+<meta name="description" content="ورود سریع و رایگان به آیناز چت؛ چت روم فارسی سبک برای گفت‌وگو، دوستی و حل معماهای سرگرم‌کننده، بدون نیاز به نصب برنامه.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://www.aynazchat.biz/">
+<style>
+:root{--bg:#06111d;--panel:#0b1c2c;--line:#1d3c50;--text:#eef7f8;--muted:#9eb5bd;--brand:#25d0ad;--brand2:#48a9e6;--danger:#ff6685;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;direction:rtl;line-height:1.75}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 0,rgba(37,208,173,.13),transparent 34%),radial-gradient(circle at 5% 40%,rgba(72,169,230,.1),transparent 28%)}
+a{color:inherit}
+button,input{font:inherit}
+.skip{position:fixed;top:-60px;right:12px;z-index:10;background:#fff;color:#111;padding:8px 14px;border-radius:8px}.skip:focus{top:12px}
+.page{position:relative;width:min(100% - 28px,960px);margin:auto;padding:28px 0 48px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.logo{width:50px;height:50px;flex:0 0 50px}.brand strong{display:block;font-size:20px}.brand small{display:block;color:var(--muted);font-size:12px}
+.online{display:flex;align-items:center;gap:7px;color:#c9f8e9;text-decoration:none;font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(37,208,173,.12)}
+.hero{display:grid;grid-template-columns:minmax(0,390px) 1fr;gap:28px;align-items:start}
+.card,.content{background:rgba(11,28,44,.9);border:1px solid var(--line);border-radius:var(--r)}
+.card{padding:24px;box-shadow:0 22px 60px rgba(0,0,0,.22)}
+.eyebrow{margin:0 0 4px;color:var(--brand);font-size:12px}.card h1{margin:0;font-size:25px;line-height:1.5}.lead{margin:5px 0 20px;color:var(--muted);font-size:13px}
+.modes,.gender{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:#071522;border:1px solid var(--line);border-radius:12px;margin-bottom:14px}
+.choice{border:0;border-radius:8px;padding:9px;color:var(--muted);background:transparent;cursor:pointer}.choice.active{color:#03241d;background:var(--brand);font-weight:bold}.gender .choice.active{color:#fff;background:#173d55}
+.field{margin:0 0 14px}.field label{display:block;margin:0 2px 6px;color:#c9d9de;font-size:13px}.input-wrap{position:relative}.input-wrap input,.plain-input{display:block;width:100%;height:48px;border:1px solid var(--line);border-radius:11px;background:#071522;color:var(--text);padding:0 14px;outline:0}.input-wrap input{padding-left:44px}.input-wrap input:focus,.plain-input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(37,208,173,.12)}
+.eye{position:absolute;left:5px;top:5px;width:38px;height:38px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer}
+.captcha{display:flex;gap:9px}.captcha img{width:100px;height:40px;margin-top:4px;object-fit:cover;border-radius:8px;background:#fff}.captcha input{flex:1}
+.hint{margin:-3px 1px 14px;color:var(--muted);font-size:12px}.submit{width:100%;border:0;border-radius:11px;padding:13px 16px;background:linear-gradient(110deg,var(--brand),#56dfbd);color:#03241d;font-weight:bold;cursor:pointer}.submit:hover{filter:brightness(1.06)}.submit:focus-visible,.choice:focus-visible,.eye:focus-visible{outline:3px solid rgba(72,169,230,.45);outline-offset:2px}
+.privacy{margin:12px 0 0;text-align:center;color:var(--muted);font-size:11px}
+.content{padding:28px}.content h2{margin:0 0 8px;font-size:24px;line-height:1.55}.content h3{margin:23px 0 5px;font-size:17px}.content p{margin:0 0 12px;color:#c0d0d5;font-size:14px}.riddle{margin:18px 0;padding:15px;border-right:3px solid var(--brand);border-radius:10px;background:#071522}.riddle strong{color:var(--brand)}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:18px 0}.feature{padding:11px;border:1px solid var(--line);border-radius:10px;color:#c9d9de;font-size:13px}.feature b{display:block;color:#fff}
+.main-link{display:inline-block;margin-top:5px;color:var(--brand);text-underline-offset:4px}.footer{padding-top:24px;text-align:center;color:var(--muted);font-size:12px}
+[hidden]{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.content{padding:22px}.page{padding-top:18px}}
+@media(max-width:420px){.top{align-items:flex-start}.online{font-size:0}.online:after{content:"آنلاین";font-size:12px}.card{padding:19px}.features{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#login-form">رفتن به فرم ورود</a>
+<main class="page">
+  <header class="top">
+    <a class="brand" href="https://www.aynazchat.biz/" aria-label="صفحه اصلی آیناز چت">
+      <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="لوگوی آیناز چت"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#25d0ad"/><stop offset="1" stop-color="#48a9e6"/></linearGradient></defs><path fill="url(#g)" d="M32 5C16.5 5 4 15.7 4 29c0 7.3 3.8 13.8 9.8 18.2L10 59l14.4-6.1c2.4.7 5 1.1 7.6 1.1 15.5 0 28-10.7 28-25S47.5 5 32 5Z"/><path fill="#062038" d="M22 26a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm20 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM18 34c5 8 23 8 28 0-8 4-20 4-28 0Z"/></svg>
+      <span><strong>آیناز چت</strong><small>گفت‌وگوی فارسی، سریع و ساده</small></span>
+    </a>
+    <a class="online" href="onlines" target="_blank" rel="nofollow noopener"><span class="dot"></span><?php echo(db::onlines('onlines', "`hide`='0'")); ?> کاربر آنلاین</a>
+  </header>
+
+  <div class="hero">
+    <section class="card" aria-labelledby="login-title">
+      <p class="eyebrow">ورود فوری و رایگان</p>
+      <h1 id="login-title">به آیناز چت خوش آمدید</h1>
+      <p class="lead">یک نام انتخاب کنید و وارد جمع فارسی‌زبان‌ها شوید.</p>
+
+      <div class="modes" role="group" aria-label="نوع ورود">
+        <button class="choice active" id="tabGuest" type="button" aria-pressed="true">ورود مهمان</button>
+        <button class="choice" id="tabMember" type="button" aria-pressed="false">ورود اعضا</button>
+      </div>
+      <div class="gender" role="group" aria-label="انتخاب جنسیت">
+        <button class="choice active" type="button" data-gender="1" aria-pressed="true">آقا</button>
+        <button class="choice" type="button" data-gender="2" aria-pressed="false">خانم</button>
+      </div>
+
+      <form id="login-form" onsubmit="return login(this);">
+        <input type="hidden" name="token" value="<?=token2();?>">
+        <input type="hidden" name="<?=rrobot();?>" value="<?=mrobot();?>">
+        <input type="hidden" name="<?=trobot();?>" value="<?=rtoken();?>">
+        <input type="hidden" name="<?=token2();?>" value="<?=gtoken();?>">
+        <input type="hidden" name="gender" value="1" class="js-sex">
+
+        <div class="field">
+          <label for="username">نام کاربری</label>
+          <div class="input-wrap"><input type="text" name="username" id="username" class="input_class" maxlength="<?php echo($options['chat_maxlengthname']); ?>" placeholder="مثلاً آیناز ۷۲" autocomplete="nickname" autocapitalize="none" spellcheck="false" required></div>
+        </div>
+
+        <?php if($options['captcha_login'] == 'true'){ ?>
+        <div class="field" id="lay_captcha">
+          <label for="captcha">کد امنیتی</label>
+          <div class="captcha"><img src="<?php echo(url('captcha/100/40'));?>" width="100" height="40" alt="تصویر کد امنیتی"><input class="plain-input" type="text" name="captcha" id="captcha" inputmode="numeric" autocomplete="off" placeholder="کد تصویر"></div>
+        </div>
+        <?php } ?>
+
+        <div class="field input_pass" id="lay_pw" hidden>
+          <label for="pw">رمز عبور</label>
+          <div class="input-wrap"><input type="password" name="password" id="pw" placeholder="رمز حساب شما" autocomplete="current-password"><button class="eye" id="togglePassword" type="button" aria-label="نمایش رمز عبور">◉</button></div>
+          <p class="hint">اگر این نام متعلق به شما نیست، یک عدد به انتهای آن اضافه کنید.</p>
+        </div>
+
+        <div id="lay_security_question" style="display:none"><div id="question"></div><input class="plain-input" type="text" name="security_answer" id="security_answer" placeholder="پاسخ سؤال امنیتی"></div>
+        <div id="lay_hide" style="display:none"></div>
+        <p class="hint" id="guestHint">برای ورود مهمان نیازی به رمز یا ثبت‌نام ندارید.</p>
+        <button class="submit" type="submit">ورود به آیناز چت</button>
+        <p class="privacy">با ورود، رعایت احترام و قوانین عمومی گفت‌وگو را می‌پذیرید.</p>
+      </form>
+    </section>
+
+    <article class="content">
+      <h2>آیناز چت؛ چت روم فارسی با یک حال‌وهوای معمایی</h2>
+      <p>در آیناز چت می‌توانید بدون نصب برنامه و تنها با انتخاب یک نام وارد گفت‌وگو شوید. طراحی کم‌حجم این صفحه برای اتصال‌های موبایل و اینترنت کاربران ایران بهینه شده است.</p>
+      <div class="riddle"><strong>معمای امروز:</strong> آن چیست که هرچه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟ پاسخ را بعد از ورود با دوستانتان مقایسه کنید.</div>
+      <div class="features">
+        <div class="feature"><b>ورود بدون ثبت‌نام</b>شروع گفتگو در چند ثانیه</div>
+        <div class="feature"><b>سازگار با موبایل</b>نمایش روان در صفحه‌های کوچک</div>
+        <div class="feature"><b>گفت‌وگوی فارسی</b>محیط راست‌چین و خوانا</div>
+        <div class="feature"><b>سبک و کم‌مصرف</b>بدون فونت و فایل خارجی</div>
+      </div>
+      <h3>چطور وارد چت روم شویم؟</h3>
+      <p>حالت مهمان یا عضو را انتخاب کنید، جنسیت و نام کاربری را مشخص کنید و دکمه ورود را بزنید. اعضای قدیمی می‌توانند با رمز خود وارد شوند.</p>
+      <h3>فضایی برای گفتگو و سرگرمی</h3>
+      <p>موضوعات دوستانه، بازی‌های کلامی و معماهای کوتاه بهانه‌ای برای شروع مکالمه‌اند. اطلاعات حساس خود را در گفت‌وگوهای عمومی منتشر نکنید و با دیگر کاربران محترمانه رفتار کنید.</p>
+      <a class="main-link" href="https://www.aynazchat.biz/">ورود به صفحه اصلی آیناز چت</a>
+    </article>
+  </div>
+  <footer class="footer">© <?php echo date('Y'); ?> آیناز چت — گفت‌وگوی فارسی آنلاین</footer>
+</main>
+
+<script>
+(function(){
+  var guest=document.getElementById('tabGuest'),member=document.getElementById('tabMember'),password=document.getElementById('lay_pw'),hint=document.getElementById('guestHint'),user=document.getElementById('username');
+  function setMode(isGuest){guest.classList.toggle('active',isGuest);member.classList.toggle('active',!isGuest);guest.setAttribute('aria-pressed',String(isGuest));member.setAttribute('aria-pressed',String(!isGuest));password.hidden=isGuest;hint.hidden=!isGuest;if(user)user.focus()}
+  guest.addEventListener('click',function(){setMode(true)});member.addEventListener('click',function(){setMode(false)});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gender]'),function(button){button.addEventListener('click',function(){Array.prototype.forEach.call(document.querySelectorAll('[data-gender]'),function(item){var active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});document.querySelector('.js-sex').value=button.getAttribute('data-gender')})});
+  var toggle=document.getElementById('togglePassword'),pw=document.getElementById('pw');toggle.addEventListener('click',function(){var reveal=pw.type==='password';pw.type=reveal?'text':'password';toggle.setAttribute('aria-label',reveal?'پنهان کردن رمز عبور':'نمایش رمز عبور')});
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"آیناز چت","alternateName":"Aynaz Chat","url":"https://www.aynazchat.biz/","inLanguage":"fa-IR","description":"چت روم فارسی سبک برای گفت‌وگو، دوستی و سرگرمی‌های معمایی"}</script>
+</body>
+</html>
